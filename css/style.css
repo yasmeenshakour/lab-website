@@ -1,0 +1,215 @@
+html{
+    scroll-behavior: smooth;
+}
+p{
+  font-family: 'IBM Plex Serif', serif;
+  font-size: 25px;
+  line-height: 30px;
+  padding:50px;
+}
+/* Style and hide skip to main content link */
+.skipcont a{
+  background: white;
+  left: 0;
+  padding: 6px;
+  position: absolute;
+  top: -40px;
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 1;
+}
+/* Make skip to main content link visable */
+.skipcont a:focus{
+  top:0;
+}
+/* when you tab through have it focus on the link */
+*:focus{
+  border: 1px solid gray;
+}
+
+/* Style the header with a grey background and some padding */
+.header{
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+}
+/* add padding to Umich header logo */
+.header img{
+  padding-bottom: 12px;
+  width: 90vw;
+}
+/* Style the header links */
+.header a, button{
+  float: none;
+  display: block;
+  text-align: center;
+  color: #00274c;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 22px;
+  line-height: 25px;
+  border-radius: 4px;
+
+  /* transition in new text color */
+  -webkit-transition: color .5s; /* For Safari 3.0 to 6.0 */
+        transition: color .5s; /* For modern browsers */
+}
+/* Change the background color on mouse-over */
+.header a:hover {
+  /* background-color: #ddd; */
+  background-color: #325270;
+  color: white;
+}
+/* Style the active/current link*/
+.header a.active {
+  background-color: #00274c;
+  color: #ffcb05;
+}
+/* get rid of float so links section stays on left */
+.header-links {
+  float: center;
+
+  display: none;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.show {display:block;}
+
+button{
+ cursor: pointer;
+ background-color: #00274c;
+ color: #ffcb05;
+}
+
+button:hover, button:focus{
+ background-color: #ffcb05;
+ color:#00274c;
+
+}
+/* header Menu button */
+button.menu-toggle{
+	width: 100vw;
+  padding-left: 0px;
+	/* padding: 0.5em; */
+	/* border: none; */
+	/* font-size: 1em;
+	font-weight: 500; */
+  border-radius: 0;
+}
+
+
+/* START of photo gallery */
+/* the galleryPhotos stuff below is about positioning the images */
+.galleryPhotos{
+  padding: 5vh 5vw;
+}
+#galleryPhotos{
+  display: -webkit-box;
+    display: flex;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+    justify-content: center;
+}
+#galleryPhotos img{
+  width:auto;
+  max-width: 80vw;
+  height: auto;
+  max-height: 50vh;
+}
+
+/* For the staff page display the columns below each other instead of side by side on small screens */
+.column {
+  width: 100%;
+  display: block;
+}
+/* For the staff page. Add some shadows to create a card effect */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+/* For the staff page. Add some shadows to create a card effect */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* For the staff page. Some left and right padding inside the container */
+.container {
+  padding: 0 16px;
+}
+/* Clear floats */
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+/* END OF STAFF PAGE */
+
+
+footer{
+  background-color: #00274c;
+  color: #ffcb0b;
+}
+
+
+/*desktop*/
+@media screen and (min-width: 851px){
+  /* Style the header links */
+  .header a {
+    float: left;
+    font-size: 20px;
+    /* text-align: center; */
+  }
+  /* Float the link section to the right */
+  .header-links {
+  display: inline-block;
+  float: right;
+  padding-top: 3px;
+  }
+  /* hide the header Menu button */
+	.menu-toggle{
+		display: none;
+	}
+  /* readjust header Umich logo */
+  .header img{
+    padding-bottom: 0;
+    width: 30vw;
+  }
+
+  #galleryPhotos img{
+  width:auto;
+  max-width: 30vw;
+  height: auto;
+  max-height: 50vh;
+ }
+ /* For the staff page, we put three columns side by side */
+ .column {
+  /* float: left; */
+  width: 32%;
+  /* margin-bottom: 16px;
+  margin-top: 16px; */
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 8px;
+}
+}
